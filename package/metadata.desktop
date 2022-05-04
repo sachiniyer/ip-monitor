@@ -1,0 +1,16 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=IP Monitor
+Comment=Displays public and private ip addresses
+Type=Service
+X-KDE-PluginInfo-Author=Sachin Iyer
+X-KDE-PluginInfo-Email=sachinjiyer@gmail.com
+X-KDE-PluginInfo-License=GPL2
+X-KDE-PluginInfo-Name=com.sachiniyer.ipmonitor
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Website=https://sachiniyer.com
+X-KDE-ServiceTypes=Plasma/Applet
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml
+X-KDE-PluginInfo-Category=System Information
+Icon=network-server
