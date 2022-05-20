@@ -23,17 +23,22 @@ Item {
     return ""
   }
 
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
   // This gets the public ip address of the machine
   // If it is not connected to the internet (or the request fails) it returns an empty string
   function getPub() {
-    var url = "http://trackip.net/pfsense"
-    var req = new XMLHttpRequest()
-    req.open("GET", url, false)
-    req.send(null)
-    if (req.response) {
-      return parseIP(req.responseText)
+    var data = "{\n    \"Token\": \"" + getRandomInt(10000).toString() + "\n}";
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://v4.ident.me/", false);
+    xhr.send(data)
+    if (xhr.status == 200) {
+      return parseIP(xhr.responseText)
     }
     return ""
+
   }
 
   // This gets the private ip address of the machine
@@ -113,11 +118,12 @@ Item {
 
   }
   Timer {
+    /* interval: plasmoid.configuration.updateInterval * 60 */
     interval: plasmoid.configuration.updateInterval * 60000
     running: true
     repeat: true
     onTriggered: {
-      display.text = main.full
+      main.full = getString()
     }
   }
 }
