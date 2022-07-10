@@ -1,4 +1,4 @@
-# Power Monitor
+# IP Monitor
 A stupidly simple KDE Plasma 5 widget to view your private and public ip addresses
 
 
